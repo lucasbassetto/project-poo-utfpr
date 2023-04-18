@@ -1,17 +1,20 @@
 class Moto extends Veiculo implements Aluguel {
 
-    private int cilindradas;
+    private String cilindradas;
 
-    public Moto(String placa, String marca, String modelo, String cor, boolean isDisponivel, int cilindradas) {
+    public Moto() {
+    }
+
+    public Moto(String placa, String marca, String modelo, String cor, boolean isDisponivel, String cilindradas) {
         super(placa, marca, modelo, cor, isDisponivel);
         this.cilindradas = cilindradas;
     }
 
-    public int getCilindradas() {
+    public String getCilindradas() {
         return cilindradas;
     }
 
-    public void setCilindradas(int cilindradas) {
+    public void setCilindradas(String cilindradas) {
         this.cilindradas = cilindradas;
     }
 

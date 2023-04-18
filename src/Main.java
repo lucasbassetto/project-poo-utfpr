@@ -34,7 +34,7 @@ public class Main {
 //        Cliente c = new Cliente(nome, cpf, endereco, telefone, id);
 //        System.out.println(c);
 //
-        //Instancação de objetos "Carro"
+        //Instanciação de objetos "Carro"
         Carro c1 = new Carro();
         Carro c2 = new Carro();
         Carro c3 = new Carro();
@@ -42,6 +42,15 @@ public class Main {
         Carro c5 = new Carro();
         Carro c6 = new Carro();
         Carro c7 = new Carro();
+
+        //Instancia de objetos "Moto"
+        Moto m1 = new Moto();
+        Moto m2 = new Moto();
+        Moto m3 = new Moto();
+        Moto m4 = new Moto();
+        Moto m5 = new Moto();
+        Moto m6 = new Moto();
+        Moto m7 = new Moto();
 
         //Atribuindo valores aos objetos
         c1.setPlaca("ABC1234");
@@ -51,6 +60,7 @@ public class Main {
         c1.setDisponivel(true);
         c1.setNumeroPortas("4");
 
+        //Atribuindo valores aos objetos
         c2.setPlaca("NBZ2131");
         c2.setMarca("FIAT");
         c2.setModelo("Argo");
@@ -58,6 +68,7 @@ public class Main {
         c2.setDisponivel(true);
         c2.setNumeroPortas("4");
 
+        //Atribuindo valores aos objetos
         c3.setPlaca("KIK1982");
         c3.setMarca("FIAT");
         c3.setModelo("Siena");
@@ -65,6 +76,7 @@ public class Main {
         c3.setDisponivel(true);
         c3.setNumeroPortas("4");
 
+        //Atribuindo valores aos objetos
         c4.setPlaca("AKI8872");
         c4.setMarca("FERRARI");
         c4.setModelo("F8");
@@ -72,29 +84,78 @@ public class Main {
         c4.setDisponivel(true);
         c4.setNumeroPortas("2");
 
+        //Atribuindo valores aos objetos
         c5.setPlaca("AZZ2162");
-        c5.setMarca("FIAT");
-        c5.setModelo("Argo");
-        c5.setCor("Prata");
+        c5.setMarca("Ferrari");
+        c5.setModelo("F8");
+        c5.setCor("Amarelha");
         c5.setDisponivel(false);
         c5.setNumeroPortas("2");
 
-        c6.setPlaca("AZZ2162");
-        c6.setMarca("FIAT");
-        c6.setModelo("Argo");
-        c6.setCor("Prata");
+        //Atribuindo valores aos objetos
+        c6.setPlaca("IJH2121");
+        c6.setMarca("Audi");
+        c6.setModelo("R8");
+        c6.setCor("Azul");
         c6.setDisponivel(false);
         c6.setNumeroPortas("2");
 
-        c7.setPlaca("AZZ2162");
-        c7.setMarca("FIAT");
-        c7.setModelo("Argo");
-        c7.setCor("Prata");
-        c7.setDisponivel(false);
+        //Atribuindo valores aos objetos
+        c7.setPlaca("LOL2288");
+        c7.setMarca("Audi");
+        c7.setModelo("R8");
+        c7.setCor("Preto");
+        c7.setDisponivel(true);
         c7.setNumeroPortas("2");
 
+        m1.setPlaca("BRA1234");
+        m1.setMarca("Honda");
+        m1.setModelo("CG");
+        m1.setCor("Vermelha");
+        m1.setDisponivel(true);
+        m1.setCilindradas("160");
 
+        m2.setPlaca("CCR2211");
+        m2.setMarca("Honda");
+        m2.setModelo("CG");
+        m2.setCor("Preto");
+        m2.setDisponivel(true);
+        m2.setCilindradas("160");
 
+        m3.setPlaca("SAS3333");
+        m3.setMarca("Honda");
+        m3.setModelo("CG");
+        m3.setCor("Vermelho");
+        m3.setDisponivel(false);
+        m3.setCilindradas("160");
+
+        m4.setPlaca("LKK4232");
+        m4.setMarca("Suzuki");
+        m4.setModelo("GZX");
+        m4.setCor("Preto");
+        m4.setDisponivel(false);
+        m4.setCilindradas("1000");
+
+        m5.setPlaca("LLL9990");
+        m5.setMarca("Suzuki");
+        m5.setModelo("Hayabusa");
+        m5.setCor("Preto");
+        m5.setDisponivel(true);
+        m5.setCilindradas("1000");
+
+        m6.setPlaca("KKJ1892");
+        m6.setMarca("Harley-Davidson");
+        m6.setModelo("XL");
+        m6.setCor("Preto");
+        m6.setDisponivel(true);
+        m6.setCilindradas("883");
+
+        m7.setPlaca("NBH-9891");
+        m7.setMarca("Harley-Davidson");
+        m7.setModelo("XR");
+        m7.setCor("Preto");
+        m7.setDisponivel(false);
+        m7.setCilindradas("1200");
 
     }
 }
