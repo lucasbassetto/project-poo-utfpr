@@ -27,4 +27,9 @@ class Moto extends Veiculo implements Aluguel {
             System.out.println("Moto indisponível para aluguel: " + getModelo() + " - " + getPlaca());
         }
     }
+    @Override
+    public String toString() {
+        return  getPlaca() + " - " + getMarca() + " - " + getModelo() + " - " + getCor();
+    }
+
 }

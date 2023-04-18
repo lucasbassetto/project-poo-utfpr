@@ -27,8 +27,13 @@ public abstract class Pessoa {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpf(String cpf) throws CpfTamanhoInvalido {
+        // Verifique se o CPF possui 11 dígitos
+        if (cpf.length() != 11) {
+            throw new CpfTamanhoInvalido(); // Lança a exceção personalizada
+        } else {
+            this.cpf = cpf;
+        }
     }
 
     public String getEndereco() {

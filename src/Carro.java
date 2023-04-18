@@ -23,9 +23,13 @@ public class Carro extends Veiculo implements Aluguel {
         if(isDisponivel()) {
             setDisponivel(false);
             System.out.println();
-            System.out.println("Carro alugado: " + getModelo() + " - " + getPlaca());
+            System.out.println("Carro alugado: " + getPlaca() + " - " + getMarca() + " - " + getModelo());
         } else {
-            System.out.println("Carro indisponível para aluguel: " + getModelo() + " - " + getPlaca());
+            System.out.println("Carro indisponível para aluguel: " + getPlaca() + " - " + getMarca() + " - " + getModelo());
         }
+    }
+    @Override
+    public String toString() {
+        return  getPlaca() + " - " + getMarca() + " - " + getModelo() + " - " + getCor();
     }
 }

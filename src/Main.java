@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -7,7 +10,8 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-//
+        List<Carro> car = new ArrayList<>();
+
 //        //Instancação de objetos "Carro"
 //        Carro c1 = new Carro("ABC1234", "FIAT", "Argo", "Prata", true, "4");
 //        Carro c2 = new Carro("NBZ2131", "FIAT", "Pulse", "Preto", true, "4");
@@ -108,6 +112,14 @@ public class Main {
         c7.setDisponivel(true);
         c7.setNumeroPortas("2");
 
+        car.add(c1);
+        car.add(c2);
+        car.add(c3);
+        car.add(c4);
+        car.add(c5);
+        car.add(c6);
+        car.add(c7);
+
         m1.setPlaca("BRA1234");
         m1.setMarca("Honda");
         m1.setModelo("CG");
@@ -156,6 +168,46 @@ public class Main {
         m7.setCor("Preto");
         m7.setDisponivel(false);
         m7.setCilindradas("1200");
+
+
+        //Entrada de dados do usuário
+        System.out.println("\n------------ INSIRA OS DADOS DO CLIENTE ----------");
+        System.out.print("Digite o nome: ");
+        String nome = sc.nextLine();
+        System.out.print("Digite o CPF: ");
+        String cpf = sc.nextLine();
+        System.out.print("Digite o endereço: ");
+        String endereco = sc.nextLine();
+        System.out.print("Digite o telefone: ");
+        String telefone = sc.nextLine();
+        System.out.print("Digite o ID: ");
+        int id = sc.nextInt();
+        Cliente c = new Cliente(nome, cpf, endereco, telefone, id);
+        System.out.println(c);
+        System.out.println();
+
+        System.out.println("Carros disponíveis para alugar: ");
+        for(Carro carro : car) {
+            if(carro.isDisponivel()) {
+                System.out.println(carro);
+            }
+        }
+        System.out.println();
+
+        //Tentando alugar um carro já alugado
+        c5.alugar();
+
+        //Alugando um carro disponível
+        c1.alugar();
+
+        System.out.println();
+        System.out.println("Carros disponíveis atualizados: ");
+        for(Carro carro : car) {
+            if(carro.isDisponivel()) {
+                System.out.println(carro);
+            }
+        }
+
 
     }
 }
