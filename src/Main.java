@@ -241,7 +241,6 @@ public class Main {
                 }
             }
 
-
             //Agora, o cliente irá alugar uma moto
             //Mostrando no console as motos disponíveis no console. Repare que aparecerão apenas os carros disponíveis, onde isDisponivel = true
             System.out.println("\n===============================");
@@ -257,12 +256,11 @@ public class Main {
             //Tentando alugar motos indisponíveis
             m3.alugar();
             m4.alugar();
-            System.out.println();
 
             //Alugando uma moto disponível no sistema
             m2.alugar();
 
-            //Aqui mostrará no console os motos disponíveis atualizadas. Repare que o m1 não aparece mais no console, haja vista que ele foi alugado pelo cliente.
+            //Aqui mostrará no console os motos disponíveis atualizadas. Repare que o m2 não aparece mais no console, haja vista que ele foi alugado pelo cliente.
             System.out.println("\n===============================");
             System.out.println("Motos disponíveis atualizadas: ");
             System.out.println("===============================");
