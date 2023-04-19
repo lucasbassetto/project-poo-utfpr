@@ -22,9 +22,9 @@ class Moto extends Veiculo implements Aluguel {
     public void alugar() {
         if (isDisponivel()) {
             setDisponivel(false);
-            System.out.println("Moto alugada: " + getModelo() + " - " + getPlaca());
+            System.out.println("Moto alugada: " + getPlaca() + " - " + getMarca() + " - " + getModelo() + " - " + getCor());
         } else {
-            System.out.println("Moto indisponível para aluguel: " + getModelo() + " - " + getPlaca());
+            System.out.println("Moto indisponível para aluguel: " + getPlaca() + " - " + getMarca() + " - " + getModelo() + " - " + getCor());
         }
     }
     @Override

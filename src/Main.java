@@ -5,19 +5,20 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CpfTamanhoInvalido {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        List<Carro> car = new ArrayList<>();
+        List<Carro> listaCarro = new ArrayList<>();
+        List<Moto> listaMoto = new ArrayList<>();
 
 //        //Instancação de objetos "Carro"
 //        Carro c1 = new Carro("ABC1234", "FIAT", "Argo", "Prata", true, "4");
 //        Carro c2 = new Carro("NBZ2131", "FIAT", "Pulse", "Preto", true, "4");
 //        Carro c3 = new Carro("KIK1982", "FIAT", "Siena", "Azul", true, "4");
-//        Carro c4 = new Carro("AKI8872", "FERRARI", "F8", "Vermelha", true, "2");
-//        Carro c5 = new Carro("AZZ2162", "FERRARI", "F8", "Vermelha", false, "2");
+//        Carro c4 = new Carro("AKI8872", "FERRARI", "F8", "Vermelho", true, "2");
+//        Carro c5 = new Carro("AZZ2162", "FERRARI", "F8", "Vermelho", false, "2");
 //        Carro c6 = new Carro("LOL2288", "AUDI", "R8","Preto", false,"2");
 //        Carro c7 = new Carro("IJH2121", "AUDI", "R8","Azul", true, "2");
 //
@@ -38,6 +39,10 @@ public class Main {
 //        Cliente c = new Cliente(nome, cpf, endereco, telefone, id);
 //        System.out.println(c);
 //
+
+        //Instanciação do cliente
+        Cliente c = new Cliente();
+
         //Instanciação de objetos "Carro"
         Carro c1 = new Carro();
         Carro c2 = new Carro();
@@ -84,7 +89,7 @@ public class Main {
         c4.setPlaca("AKI8872");
         c4.setMarca("FERRARI");
         c4.setModelo("F8");
-        c4.setCor("Vermelha");
+        c4.setCor("Vermelho");
         c4.setDisponivel(true);
         c4.setNumeroPortas("2");
 
@@ -112,21 +117,24 @@ public class Main {
         c7.setDisponivel(true);
         c7.setNumeroPortas("2");
 
-        car.add(c1);
-        car.add(c2);
-        car.add(c3);
-        car.add(c4);
-        car.add(c5);
-        car.add(c6);
-        car.add(c7);
+        //Adicionando os objetos na lista de carros
+        listaCarro.add(c1);
+        listaCarro.add(c2);
+        listaCarro.add(c3);
+        listaCarro.add(c4);
+        listaCarro.add(c5);
+        listaCarro.add(c6);
+        listaCarro.add(c7);
 
+        //Atribuindo valores aos objetos
         m1.setPlaca("BRA1234");
         m1.setMarca("Honda");
         m1.setModelo("CG");
-        m1.setCor("Vermelha");
+        m1.setCor("Vermelho");
         m1.setDisponivel(true);
         m1.setCilindradas("160");
 
+        //Atribuindo valores aos objetos
         m2.setPlaca("CCR2211");
         m2.setMarca("Honda");
         m2.setModelo("CG");
@@ -134,6 +142,7 @@ public class Main {
         m2.setDisponivel(true);
         m2.setCilindradas("160");
 
+        //Atribuindo valores aos objetos
         m3.setPlaca("SAS3333");
         m3.setMarca("Honda");
         m3.setModelo("CG");
@@ -141,6 +150,7 @@ public class Main {
         m3.setDisponivel(false);
         m3.setCilindradas("160");
 
+        //Atribuindo valores aos objetos
         m4.setPlaca("LKK4232");
         m4.setMarca("Suzuki");
         m4.setModelo("GZX");
@@ -148,6 +158,7 @@ public class Main {
         m4.setDisponivel(false);
         m4.setCilindradas("1000");
 
+        //Atribuindo valores aos objetos
         m5.setPlaca("LLL9990");
         m5.setMarca("Suzuki");
         m5.setModelo("Hayabusa");
@@ -155,6 +166,7 @@ public class Main {
         m5.setDisponivel(true);
         m5.setCilindradas("1000");
 
+        //Atribuindo valores aos objetos
         m6.setPlaca("KKJ1892");
         m6.setMarca("Harley-Davidson");
         m6.setModelo("XL");
@@ -162,6 +174,7 @@ public class Main {
         m6.setDisponivel(true);
         m6.setCilindradas("883");
 
+        //Atribuindo valores aos objetos
         m7.setPlaca("NBH-9891");
         m7.setMarca("Harley-Davidson");
         m7.setModelo("XR");
@@ -169,45 +182,99 @@ public class Main {
         m7.setDisponivel(false);
         m7.setCilindradas("1200");
 
+        //Adicionando os objetos na lista de motos
+        listaMoto.add(m1);
+        listaMoto.add(m2);
+        listaMoto.add(m3);
+        listaMoto.add(m4);
+        listaMoto.add(m5);
+        listaMoto.add(m6);
+        listaMoto.add(m7);
 
-        //Entrada de dados do usuário
-        System.out.println("\n------------ INSIRA OS DADOS DO CLIENTE ----------");
-        System.out.print("Digite o nome: ");
-        String nome = sc.nextLine();
-        System.out.print("Digite o CPF: ");
-        String cpf = sc.nextLine();
-        System.out.print("Digite o endereço: ");
-        String endereco = sc.nextLine();
-        System.out.print("Digite o telefone: ");
-        String telefone = sc.nextLine();
-        System.out.print("Digite o ID: ");
-        int id = sc.nextInt();
-        Cliente c = new Cliente(nome, cpf, endereco, telefone, id);
-        System.out.println(c);
-        System.out.println();
+        //Entrada de dados do usuário - Repare também que estou adicionando uma exceção para que o usuário digite um CPF válido (necessário 11 digitos)
+        try {
+            System.out.println("\n------------ INSIRA OS DADOS DO CLIENTE ----------");
+            System.out.print("Digite o nome: ");
+            String nome = sc.nextLine();
+            c.setNome(nome);
+            System.out.print("Digite o CPF: ");
+            String cpf = sc.nextLine();
+            c.setCpf(cpf);
+            System.out.print("Digite o endereço: ");
+            String endereco = sc.nextLine();
+            c.setEndereco(endereco);
+            System.out.print("Digite o telefone: ");
+            String telefone = sc.nextLine();
+            c.setTelefone(telefone);
+            System.out.print("Digite o ID: ");
+            int id = sc.nextInt();
+            c.setId(id);
 
-        System.out.println("Carros disponíveis para alugar: ");
-        for(Carro carro : car) {
-            if(carro.isDisponivel()) {
-                System.out.println(carro);
+            //Mostrando no console os dados do cliente digitado
+            System.out.println(c);
+
+            //Mostrando no console os carros disponíveis no console. Repare que aparecerão apenas os carros disponíveis, onde isDisponivel = true
+            System.out.println("\n===============================");
+            System.out.println("Carros disponíveis para alugar: ");
+            System.out.println("===============================");
+            for (Carro carro : listaCarro) {
+                if (carro.isDisponivel()) {
+                    System.out.println(carro);
+                }
             }
-        }
-        System.out.println();
+            System.out.println();
 
-        //Tentando alugar um carro já alugado
-        c5.alugar();
+            //Tentando alugar alguns carros já alugados - aqui mostrará no console que os carros não estão disponíveis
+            c5.alugar();
+            c6.alugar();
 
-        //Alugando um carro disponível
-        c1.alugar();
+            //Alugando um carro disponível - aqui mostrará no console que o carro foi alugado com sucesso
+            c1.alugar();
 
-        System.out.println();
-        System.out.println("Carros disponíveis atualizados: ");
-        for(Carro carro : car) {
-            if(carro.isDisponivel()) {
-                System.out.println(carro);
+            //Aqui mostrará no console os carros disponíveis atualizados. Repare que o c1 não aparece mais no console, haja vista que ele foi alugado pelo cliente.
+            System.out.println("\n===============================");
+            System.out.println("Carros disponíveis atualizadas: ");
+            System.out.println("===============================");
+            for (Carro carro : listaCarro) {
+                if (carro.isDisponivel()) {
+                    System.out.println(carro);
+                }
             }
+
+
+            //Agora, o cliente irá alugar uma moto
+            //Mostrando no console as motos disponíveis no console. Repare que aparecerão apenas os carros disponíveis, onde isDisponivel = true
+            System.out.println("\n===============================");
+            System.out.println("Motos disponíveis para alugar: ");
+            System.out.println("===============================");
+            for (Moto moto  : listaMoto) {
+                if (moto.isDisponivel()) {
+                    System.out.println(moto);
+                }
+            }
+            System.out.println();
+
+            //Tentando alugar motos indisponíveis
+            m3.alugar();
+            m4.alugar();
+            System.out.println();
+
+            //Alugando uma moto disponível no sistema
+            m2.alugar();
+
+            //Aqui mostrará no console os motos disponíveis atualizadas. Repare que o m1 não aparece mais no console, haja vista que ele foi alugado pelo cliente.
+            System.out.println("\n===============================");
+            System.out.println("Motos disponíveis atualizadas: ");
+            System.out.println("===============================");
+            for (Moto moto  : listaMoto) {
+                if (moto.isDisponivel()) {
+                    System.out.println(moto);
+                }
+            }
+            System.out.println();
+
+        } catch (CpfTamanhoInvalido e) {
+            System.out.println("ERRO: " + e.getMessage());
         }
-
-
     }
 }

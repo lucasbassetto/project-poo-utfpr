@@ -5,7 +5,7 @@ public class Cliente extends Pessoa {
     public Cliente() {
     }
 
-    public Cliente(String nome, String cpf, String endereco, String telefone, int id) {
+    public Cliente(String nome, String cpf, String endereco, String telefone, int id) throws CpfTamanhoInvalido {
         super(nome, cpf, endereco, telefone);
         this.id = id;
     }
@@ -25,6 +25,6 @@ public class Cliente extends Pessoa {
                 "\nCPF: " + this.getCpf() +
                 "\nEndereço: " + this.getEndereco() +
                 "\nTelefone: " + this.getTelefone() +
-                "\nID: " + this.id;
+                "\nID: " + this.id + "\n";
     }
 }

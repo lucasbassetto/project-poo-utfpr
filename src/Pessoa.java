@@ -8,7 +8,10 @@ public abstract class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String cpf, String endereco, String telefone) {
+    public Pessoa(String nome, String cpf, String endereco, String telefone) throws CpfTamanhoInvalido {
+        if (cpf.length() != 11) {
+            throw new CpfTamanhoInvalido("CPF com tamanho inválido"); // Lança a exceção personalizada
+        }
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -30,7 +33,7 @@ public abstract class Pessoa {
     public void setCpf(String cpf) throws CpfTamanhoInvalido {
         // Verifique se o CPF possui 11 dígitos
         if (cpf.length() != 11) {
-            throw new CpfTamanhoInvalido(); // Lança a exceção personalizada
+            throw new CpfTamanhoInvalido("CPF com tamanho inválido, por favor, reinicie o programa e digite um CPF válido"); // Lança a exceção personalizada
         } else {
             this.cpf = cpf;
         }
