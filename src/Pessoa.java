@@ -1,3 +1,5 @@
+// Lucas Feliciano Bassetto - RA: 1750658
+
 public abstract class Pessoa {
 
     private String nome;

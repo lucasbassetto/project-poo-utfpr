@@ -1,3 +1,5 @@
+// Lucas Feliciano Bassetto - RA: 1750658
+
 public class Cliente extends Pessoa {
 
     private int id;

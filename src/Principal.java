@@ -1,44 +1,18 @@
-import java.io.IOException;
+// Lucas Feliciano Bassetto - RA: 1750658
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws CpfTamanhoInvalido {
+public class Principal {
+    public static void main(String[] args) {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
         List<Carro> listaCarro = new ArrayList<>();
         List<Moto> listaMoto = new ArrayList<>();
-
-//        //Instancação de objetos "Carro"
-//        Carro c1 = new Carro("ABC1234", "FIAT", "Argo", "Prata", true, "4");
-//        Carro c2 = new Carro("NBZ2131", "FIAT", "Pulse", "Preto", true, "4");
-//        Carro c3 = new Carro("KIK1982", "FIAT", "Siena", "Azul", true, "4");
-//        Carro c4 = new Carro("AKI8872", "FERRARI", "F8", "Vermelho", true, "2");
-//        Carro c5 = new Carro("AZZ2162", "FERRARI", "F8", "Vermelho", false, "2");
-//        Carro c6 = new Carro("LOL2288", "AUDI", "R8","Preto", false,"2");
-//        Carro c7 = new Carro("IJH2121", "AUDI", "R8","Azul", true, "2");
-//
-//        //Instanciação dos objetos "Moto"
-//
-//        //Entrada de dados do usuário
-//        System.out.println("------------ INSIRA OS DADOS DO CLIENTE ----------");
-//        System.out.print("Digite o nome: ");
-//        String nome = sc.nextLine();
-//        System.out.print("Digite o CPF: ");
-//        String cpf = sc.nextLine();
-//        System.out.print("Digite o endereço: ");
-//        String endereco = sc.nextLine();
-//        System.out.print("Digite o telefone: ");
-//        String telefone = sc.nextLine();
-//        System.out.print("Digite o ID: ");
-//        int id = sc.nextInt();
-//        Cliente c = new Cliente(nome, cpf, endereco, telefone, id);
-//        System.out.println(c);
-//
 
         //Instanciação do cliente
         Cliente c = new Cliente();

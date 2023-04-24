@@ -1,4 +1,4 @@
-import java.util.List;
+// Lucas Feliciano Bassetto - RA: 1750658
 
 public class Carro extends Veiculo implements Aluguel {
 
